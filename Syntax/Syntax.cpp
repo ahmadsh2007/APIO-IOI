@@ -213,4 +213,136 @@ int main(){
     // }
     // double area = square(5.0);
     // std::cout << "Area of the square: " << area << std::endl;
+
+    // * Function Overloading
+    // ? Function overloading is a feature in C++ that allows you to define multiple functions with the same name but different parameter types or numbers of parameters.
+    // ? example:
+    // double add(double a, double b){
+    //     return a + b;
+    // }
+    // int add(int a, int b){
+    //     return a + b;
+    // }
+    // double add(double a, double b, double c){
+    //     return a + b + c;
+    // }
+    // all three functions have the same name, but they have different parameter types or numbers of parameters.
+    // std::cout << add(5.0, 3.0) << std::endl; // calls the first function
+    // std::cout << add(5, 3) << std::endl; // calls the second function
+    // std::cout << add(5.0, 3.0, 2.0) << std::endl; // calls the third function
+
+    // ! Local and Global Variables
+    // ? Local variables are variables that are declared inside a function or a block of code. They can only be accessed within that function or block of code.
+    // ? Global variables are variables that are declared outside of any function or block of code. They can be accessed from anywhere in the program.
+    // ? Note: Functions use local variables before global variables.
+    // ? Example:
+    // int x = 5; // global variable
+    // void myFunction(){
+    //     int x = 10; // local variable
+    //     std::cout << "Local x: " << x << std::endl; // prints 10
+    //     std::cout << "Global x: " << ::x << std::endl; // prints 5 (:: means global variable)
+    // }
+
+    // array = a collection of elements of the same type, stored in contiguous memory locations.
+    // ? Example:
+    // int numbers[5] = {1, 2, 3, 4, 5}; ( we use {} and not () because we are initializing an array)
+    // ? if you dont want to assign a value to an array, you can use the following syntax:
+    // int numbers[n]; // this will create an array of n integers, but they will not be initialized to any value
+    // you can use one type of variables in an array only
+    // if you want to iterate through an array, you can use a for loop
+    // for(int i = 0; i < sizeof(numbers)/sizeof(element type); i++){
+    //     std::cout << numbers[i] << std::endl;
+    // }
+    //
+    // if you want to use different types of variables, you can use a struct or a class
+    // ? Example:
+    // struct Person{
+    //     std::string name;
+    //     int age;
+    // };
+    // Person people[5]; // this will create an array of 5 Person objects
+    // people[0].name = "John";
+    // people[0].age = 25;
+
+    // ! sizeof() function
+    // ? sizeof() function returns the size of a variable or data type in bytes.
+    // ? Example:
+    // sizeof(int) = 4 bytes
+    // sizeof(double) = 8 bytes
+    // sizeof(char) = 1 byte
+    // sizeof(float) = 4 bytes
+    // sizeof(bool) = 1 byte
+    // sizeof(array) = size of the array in bytes (number of elements * size of each element)
+
+    // foreach loop = a loop that iterates through each element of a collection (array, vector, etc.)
+    // ? Example:
+    // int numbers[5] = {1, 2, 3, 4, 5};
+    // for(int num : numbers){
+    //     std::cout << num << std::endl;
+    // }
+
+    // fill(begin, end, value) = fills the range [begin, end) with the value
+    // ? Example:
+    // std::string foods[100];
+    // std::fill(std::begin(foods), std::end(foods), "Pizza");
+    // or std::fill(foods, foods + 100, "Pizza");
+    // for(std::string food : foods):
+    //     std::cout << food << std::endl;
+
+    // Multidimensional arrays = an array of arrays (array with more than one dimension)
+    // ? Example:
+    // int matrix[3][3] = {{1, 2, 3},
+    //                     {4, 5, 6},
+    //                     {7, 8, 9}}; // this will create a 3x3 matrix
+    // ? if you want to iterate through a multidimensional array, you can use nested for loops
+    // int rows = sizeof(matrix)/sizeof(matrix[0]); // number of rows
+    // int cols = sizeof(matrix[0])/sizeof(matrix[0][0]); // number of columns
+    // for(int i = 0; i < rows; i++){
+    //     for(int j = 0; j < cols; j++){
+    //         std::cout << matrix[i][j] << " ";
+    //     }
+    //     std::cout << std::endl;
+    // }
+
+    // memory address = a location in memory where a variable is stored
+    // a memory address can be accessed using the & (address of) operator
+    // ? Example:
+    // int x = 5;
+    // std::cout << "Memory address of x: " << &x << std::endl; // prints the memory address of x
+
+    // swap by Value vs swap by Reference
+    // ? swap by value = creates a copy of the variable and swaps the copies, not the original variables
+    // ? swap by reference = swaps the original variables, not the copies
+    // ? Example:
+    // void swap(int a, int b){
+    //     int temp = a;
+    //     a = b;
+    //     b = temp;
+    // }
+    // int x = 5, y = 10;
+    // swap(x, y); // this will not swap x and y, because we are passing the values, not the references
+    // std::cout << "x: " << x << std::endl; // prints 5
+    // std::cout << "y: " << y << std::endl; // prints 10
+    //
+    // void swap(int &a, int &b){
+    //     int temp = a;
+    //     a = b;
+    //     b = temp;
+    // }
+    // int x = 5, y = 10;
+    // swap(x, y); // this will swap x and y, because we are passing the references, not the values
+    // std::cout << "x: " << x << std::endl; // prints 10
+    // std::cout << "y: " << y << std::endl; // prints 5
+    // ? Note: you can also use pointers to swap variables, but it is not recommended because it is more complex and less readable than using references.
+
+    // Const parameters = parameters that cannot be modified inside the function
+    // ? Example:
+    // void myFunction(const int x){
+    //     x = 10; // this will cause a compilation error, because x is a const parameter
+    // }
+    // int main(){
+    //     int x = 5;
+    //     myFunction(x); // this will call the function, but x will not be modified
+    //     std::cout << "x: " << x << std::endl; // prints 5
 }
+
