@@ -407,5 +407,297 @@ int main(){
     // }
     //
     // delete[] pGrades;
+
+    // recursion = a programming technique where a function
+    //             invokes itself from within
+    //             break a complex concept into a repeatable single step
+    // (iterative vs recursive)
+    // advantages = -less code and is cleaner
+    //              -useful for sorting and searching algorithms
+    // disadvantages = -uses more memory
+    //                 -slower
+    // ? Example:
+    // int factorial(int num);
+    // int main () {
+    //
+    //     std::cout << factorial(10);
+    //
+    //     return 0;
+    // }
+    // int factorial(int num){
+    //     if(num > 1){
+    //         return num * factorial(num - 1);
+    //     }
+    //     else{
+    //         return 1;
+    //     }
+    // }
+
+    // function templates = describes what a function looks like.
+    //                      Can be used to generate as many overloads functions
+    //                      as needed, each using different data types
+    //                      without having to write the same code over and over again.
+    //                      This is useful when you want to create a function that can
+    //                      work with different data types.
+    // ? Example:
+    // template <typename T, typename U>
+    // auto max(T a, U b){
+    //     return (a > b) ? a : b;
+    // }
+    // int main(){
+    //     std::cout << max(5, 10) << std::endl; // calls the first function
+    //     std::cout << max(5.0, 10.0) << std::endl; // calls the second function
+    //     std::cout << max("1", "2") << std::endl; // calls the third function
+    //     std::cout << max(5, 10.0) << std::endl; // calls the fourth function
+
+    // struct = a structure that group related variables under one name>
+    //          structs can contain many different data types
+    //          variables in a struct are known as "members"
+    //          members can be accessed with . "Class Member Access Operator"
+    // ? Example:
+    // #include <iostream>
+    // struct student{
+    //     std::string name;
+    //     double gpa;
+    //     bool enrolled = true;
+    // };
+    // int main()
+    // {
+    //     student student1;
+    //     student1.name = "Sponge bob";
+    //     student1.gpa = 3.2;
+    //     student student2;
+    //     student2.name = "Patrick";
+    //     student2.gpa = 2.1;
+    //
+    //     std::cout << student1.name << '\n';
+    //     std::cout << student1.gpa << '\n';
+    //     std::cout << student1.enrolled << '\n';
+    //
+    //     std::cout << student2.name << '\n';
+    //     std::cout << student2.gpa << '\n';
+    //     std::cout << student2.enrolled << '\n';
+    //
+    //     return 0;
+    // }
+
+    // pass structs as arguments
+    // ? Example:
+    // std::string model;
+    //     int year;
+    //     std::string color;
+    // };
+    //
+    // void printCar(Car &car);
+    // void paintCar(Car &car, std::string color);
+    //
+    // int main () {
+    //
+    //     Car car1;
+    //     Car car2;
+    //
+    //     car1.model = "Mustang";
+    //     car1.year = 2023;
+    //     car1.color = "red";
+    //
+    //     car2.model = "Corvette";
+    //     car2.year = 2024;
+    //     car2.color = "blue";
+    //
+    //     paintCar(car1, "silver");
+    //     paintCar(car2, "gold");
+    //
+    //     printCar(car1);
+    //     printCar(car2);
+    //
+    //     return 0;
+    // }
+    // void printCar(Car &car){
+    //     std::cout << car.model << '\n';
+    //     std::cout << car.year << '\n';
+    //     std::cout << car.color << '\n';
+    // }
+    // void paintCar(Car &car, std::string color){
+    //     car.color = color;
+    // }
+
+    // enums = a user-defined data type that consists
+    //         of paired named-integer constants.
+    //         Great if you have a set of potential options
+    // ? Example:
+    // enum Day {sunday = 0, monday = 1, tuesday = 2, wednesday = 3,
+    // thursday = 4, friday = 5, saturday = 6};
+
+    // int main () {
+    //     Day today = friday;
+    // 
+    //     switch(today){
+    //         case sunday:    std::cout << "It is Sunday!\n";
+    //                         break;
+    //         case monday:    std::cout << "It is Monday!\n";
+    //                         break;
+    //         case tuesday:   std::cout << "It is Tuesday!\n";
+    //                         break;
+    //         case wednesday: std::cout << "It is Wednesday!\n";
+    //                         break;
+    //         case thursday:  std::cout << "It is Thursday!\n";
+    //                         break;
+    //         case friday:    std::cout << "It is Friday!\n";
+    //                         break;
+    //         case saturday:  std::cout << "It is Saturday!\n";
+    //                         break;
+    //     }
+    //     return 0;
+    // }
+
+    // Object = a collection of attributes and methods
+    //          They can have characteristics and could perform actions.
+    //          Can be used to mimic read world items (ex. Phone, Car, etc.)
+    //          Created from a class which acts as a "blueprint"
+    // ? Example:
+    // class Car{
+    //     public:
+    //         std::string make;
+    //         std::string model;
+    //         int year;
+    //         std::string color;
+
+    //     void accelerate(){
+    //         std::cout << "You step on the gas!\n";
+    //     }
+    //     void brake(){
+    //         std::cout << "You step on the brakes!\n";
+    //     }
+    // };
+    //
+    // int main() {
+    //     Car car1;
+    //     car1.make = "Ford";
+    //     car1.model = "Mustang";
+    //     car1.year = 2023;
+    //     car1.color = "silver";
+    //
+    //     std::cout << car1.make << '\n';
+    //     std::cout << car1.model << '\n';
+    //     std::cout << car1.year << '\n';
+    //     std::cout << car1.color << '\n';
+    //     car1.accelerate();
+    //     car1.brake();
+    //     return 0;
+    // }
+
+    // Constructors = special method that is automatically called when an object is instantiated
+    //                useful for assigning values to attributes as arguments
+    // ? example:
+    // class Car{
+    //     public:
+    //         std::string make;
+    //         std::string model;
+    //         int year;
+    //         std::string color;
+    //
+    //     Car(std::string make, std::string model, int y, std::string color){
+    //         this->make = make;
+    //         this->model = model;
+    //         year = y;
+    //         this->color = color;
+    // *       NB you can also use year = y; instead of this->year = y; if the variable names are different
+    //     }
+    // };
+    //
+    // int main() {
+    //     Car car1("Chevy", "Corvette", 2022, "blue");
+    //     Car car2("Ford", "Mustang", 2023, "red");
+    //
+    //     std::cout << car1.make << '\n';
+    //     std::cout << car1.model << '\n';
+    //     std::cout << car1.year << '\n';
+    //     std::cout << car1.color << '\n';
+    // }
+
+    // overloading constructors = multiple constructors w/ same name but different parameters
+    //                            allows for varying arguments when instantiating an object
+    // ? Example:
+    // class Pizza{
+    //     public:
+    //         std::string topping1;
+    //         std::string topping2;
+    //     Pizza(){}
+    //     Pizza(std::string topping1){
+    //         this->topping1 = topping1;
+    //     }
+    //     Pizza(std::string topping1, std::string topping2){
+    //         this->topping1 = topping1;
+    //         this->topping2 = topping2;
+    //     }
+    // };
+    //
+    // int main() {
+    //     Pizza pizza1("pepperoni");
+    //     Pizza pizza2("mushrooms", "peppers");
+    //     Pizza pizza3;
+    // }
+
+    // Abstraction = hiding unnecessary data from outside a class
+    // getter = function that makes a private attribute READABLE
+    // setter = function that makes a private attribute WRITABLE
+    // ? Example:
+    // class Stove{
+    //     private:
+    //         int temperature = 0;
+    //     public:
+    //         int getTemperature(){
+    //             return temperature;
+    //         }
+    //         void setTemperature(int temperature){
+    //             if(temperature < 0){
+    //                 this->temperature = 0;
+    //             }
+    //             else if(temperature >= 10){
+    //                 this->temperature = 10;
+    //             }
+    //             else{
+    //                 this->temperature = temperature;
+    //             }
+    //     }
+    // };
+    //
+    // int main() {
+    //     Stove stove;
+    //     stove.setTemperature(5);
+    //     std::cout << "The temperature setting is: " << stove.getTemperature();
+    // }
+
+    // Inheritance = a class can recieve attributes and methods from another class
+    //               Children classes inherit from a Parent class
+    //               Helps to reuse similar code found within multiple classes
+    // ? example:
+    // class Animal{
+    //     public:
+    //         bool alive = true;  
+    //     void eat(){
+    //         std::cout << "This animal is eating\n";
+    //     }
+    // };
+    // class Dog : public Animal{
+    //     public:
+    //     void bark(){
+    //         std::cout << "The dog goes woof!\n";
+    //     }
+    // };
+    // class Cat : public Animal{
+    //     public:
+    //     void meow(){
+    //         std::cout << "The cat goes meow!\n";
+    //     }
+    // };
+    //
+    // int main() {
+    //     Dog dog;
+    //     Cat cat;
+    //     std::cout << dog.alive << '\n';
+    //     dog.eat();
+    //     dog.bark();
+    // }
 }
 
