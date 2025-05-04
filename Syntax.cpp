@@ -1,5 +1,7 @@
 #include <iostream>
 #include <cmath>
+#include <string>
+#include <ctime>
 
 int main(){
     // std::string Variable;
@@ -155,4 +157,60 @@ int main(){
     //     std::cout << i << std::endl;
     // }
     // ? Output: 0 1 2 3 4 6 7 8 9
+
+    // pseudo-random = NOT truly random, but it is close enough to be considered random
+    // srand(time(NULL)); // seed the random number generator with the current time
+    // int randomNumber = rand(); you can also use rand() % n to get a random number between 0 and n-1
+    // std::cout << "Random Number: " << randomNumber << std::endl;
+    // ! Task Create Random Event Generator
+    // ? 1. Create a random number between 1 and 4
+    // ? 2. If the number is 1, print "You found a treasure!"
+    // ? 3. If the number is 2, print "You found a monster!"
+    // ? 4. If the number is 3, print "You found a potion!"
+    // ? 5. If the number is 4, print "You found a trap!"
+    // srand(time(0)); // seed the random number generator with the current time
+    // int Random = rand() % 4 + 1;
+    // switch(Random){
+    //     case 1:
+    //         std::cout << "You found a treasure!" << std::endl;
+    //         break;
+    //     case 2:
+    //         std::cout << "You found a monster!" << std::endl;
+    //         break;
+    //     case 3:
+    //         std::cout << "You found a potion!" << std::endl;
+    //         break;
+    //     case 4:
+    //         std::cout << "You found a trap!" << std::endl;
+    //         break;
+    // }
+    // 
+    // int num;
+    // int guess;
+    // int tries;
+
+    // srand(time(0));
+    // num = rand() % 2048 + 1;
+
+    // std::cout << "Welcome to the guessing game!" << std::endl;
+
+    // do{
+    //     std::cout << "Guess a number between 1 and 2048: ";
+    //     std::cin >> guess;
+    //     tries++;
+
+    //     if(guess > num){
+    //         std::cout << "Too high!" << std::endl;
+    //     } else if(guess < num){
+    //         std::cout << "Too low!" << std::endl;
+    //     } else{
+    //         std::cout << "Congratulations! You guessed the number in " << tries << " tries." << std::endl;
+    //     }
+    // }while(guess != num);
+
+    // double square(double length){
+    //     return length * length;
+    // }
+    // double area = square(5.0);
+    // std::cout << "Area of the square: " << area << std::endl;
 }
