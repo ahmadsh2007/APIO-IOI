@@ -344,5 +344,68 @@ int main(){
     //     int x = 5;
     //     myFunction(x); // this will call the function, but x will not be modified
     //     std::cout << "x: " << x << std::endl; // prints 5
+
+    // pointers = variable that stores a memory address of another variable
+    //            sometimes it's easier to work with an address
+    //
+    // & address-of operator
+    // * dereference operator
+    // ? Example:
+    // std::string name = 'Bro';
+    // std::sring *pName = &name;
+    // std::cout << pName; // it will print memory address
+    // std::cout << *pName; // it will print 'name' value
+    
+    // NULL Value = a special value that means something has no value
+    //              when a pointer is holding a null value,
+    //              that pointer is not pointing at anything (null pointer)
+    // nullptr = keyword represents a null pointer literal
+    // nullptr are helpful when determining if an address was successful assigned to a pointer
+    // ? Example:
+    // int *pointer = nullptr;
+    // int x = 123;
+    // *pointer = &x;
+    // if(pointer == nullptr){
+    //     std::cout << "address was not assigned"; 
+    // }else{
+    //     std::cout << "address was assigned";
+    // }
+    //
+    // ! When using pointers, be careful that your code isn't
+    // ! dereferencing nullptr or pointing to free memory
+    // ! this will cause undefined behavior
+    
+    // Dynamic memory = memory that is allocated after the program
+    //                  is already compiled & running.
+    //                  Use the 'new' operator to allocate
+    //                  memory is the heap rather than the stack
+    //
+    //                  Useful when we don't know how much memory
+    //                  we will need. Makes our programs more flexible.
+    //                  especially when accepting user input.
+    // ? Example: 
+    // int *pNum = NULL;
+    // pNum = new int;
+    // std::cout << "address: " << pNum << '\n';
+    // delete pNum; to Delete the dynamic memory to prevent memory leak
+    // ? Example:
+    // char *pGrades = NULL;
+    // int size;
+    //
+    // std::cout << "How many grades to enter in?: ";
+    // std::cin >> size;
+    //
+    // pGrades = new char[size];
+    //
+    // for(int i = 0; i < size; i++){
+    //     std::cout << "Enter grade #" << i + 1 << ": ";
+    //     std::cin >> pGrades[i];
+    // }
+    //
+    // for(int i = 0; i < size; i++){
+    //     std::cout << pGrades[i] << " ";
+    // }
+    //
+    // delete[] pGrades;
 }
 
